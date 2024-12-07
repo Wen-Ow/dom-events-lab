@@ -4,7 +4,7 @@
 
 /*-------------------------------- Variables --------------------------------*/
 
-// Use 'let' to manage states and values
+// Use 'let' to manage states and values that can change
 let shouldResetDisplay = false; // Variable to determine if the display should be reset
 let firstNumber = ""; // Variable to store the first number
 let operator = ""; // Variable to store the operator
@@ -12,7 +12,7 @@ let secondNumber = ""; // Variable to store the second number
 
 /*------------------------ Cached Element References ------------------------*/
 
-// 'Const' to save constant things which can't be changed and used multiple times
+// 'Const' to save constant things which can't be changed and used multiple times or cached DOM elements
 const display = document.querySelector(".display"); // Selects the display area element
 const numberButtons = document.querySelectorAll(".number"); // Selects all elements with the class of number (0-9)
 const operatorButtons = document.querySelectorAll(".operator"); // Selects all elements with the class of operator (+, -, *, /, C)
@@ -121,8 +121,8 @@ function calculate(a, operator, b) {
 function clear() {
   // Fully reset the display and clear all variables
   display.textContent = "0"; // Reset the display to "0"
-  firstNumber = ""; // Reset the first number
-  secondNumber = ""; // Reset the second number
-  operator = ""; // Reset the operator
+  firstNumber = ""; // Clear the first number
+  secondNumber = ""; // Clear the second number
+  operator = ""; // Clear the operator
   shouldResetDisplay = false; // Ensure that the display won't reset again until a new number is clicked
 }
